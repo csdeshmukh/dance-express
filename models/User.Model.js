@@ -1,47 +1,50 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const User = new Schema({
+const User = new Schema(
+  {
     userCode: {
-        type: String,
-        default: "",
+      type: String,
+      default: "",
     },
     role: {
-        type: String,
-        default: "student"
+      type: String,
+      default: "student",
     },
     name: {
-        type: String,
-        default: ""
+      type: String,
+      default: "",
     },
     mobile: {
-        type: String,
-        default: ""
+      type: String,
+      default: "",
     },
     email: {
-        type: String,
-        default: ""
+      type: String,
+      default: "",
     },
     avatar: {
-        type: String,
-        default: ""
+      type: String,
+      default: "",
     },
     isActive: {
-        type: Number,
-        default: 1
+      type: Number,
+      default: 1,
     },
     isDelete: {
-        type: Number,
-        default: 0
+      type: Number,
+      default: 0,
     },
     firebase_id: {
-        type: String,
-        default: ""
+      type: String,
+      default: "",
     },
     isOnline: {
-        type: String,
-        default: "0"
-    }
-}, { timestamps: true, versionKey: false });
+      type: String,
+      default: "0",
+    },
+  },
+  { timestamps: true, versionKey: false }
+);
 
 module.exports = mongoose.model("users", User);
